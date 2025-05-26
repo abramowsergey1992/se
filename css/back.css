@@ -1,0 +1,10 @@
+.socials-buttons li {
+    position: relative;
+}
+
+.socials-buttons li small {
+    font-size:11px;
+    position:absolute;
+    bottom:-25px;
+    left:0;
+}
