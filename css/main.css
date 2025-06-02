@@ -6269,15 +6269,15 @@ line-height: 1.4;
 	font-size: 13px;
 	line-height: 0.93346;
 	color: #667085;
-	margin-bottom: 10px;
+	margin-bottom: 8px;
 }
 
 .table-features__item-body{
 font-weight: 500;
-font-size: 18px;
+font-size: 16px;
 
 /* line-height: 13px; */ 
-line-height: 0.72232;
+line-height: 1;
 color: #2a2a2a;
 }
 .table-features__card-body{
@@ -6399,8 +6399,24 @@ flex-direction: row;
 .why-it .icon-main{
 	margin-right: 0;
 }
-
+.commerc-detail  .feedback-form__submit{
+   
+}
+.commerc-detail  .form-card input{
+    background: #fff;
+}
+.commerc-detail  .form-card{
+	background-color: #FDECDC;
+}
+.commerc-detail .list-help li {
+    padding-top: 24px;
+	padding-bottom: 24px;
+}
 @media only screen and (max-width: 992px) {
+    .commerc-detail .list-help li {
+    padding-top: 12px;
+	padding-bottom: 12px;
+}
 	.table-features{
 		grid-template-columns: 1fr 1fr;
 		gap:20px;
@@ -6448,4 +6464,12 @@ flex-direction: row;
 	.card-info__area-wrap{
 	flex-direction: column;
 	gap:10px;}
+}
+
+.card-info.commerc .btn-price-wrap{
+    margin-left: 20px;
+}
+
+.card-info.commerc .card-prices{
+    margin-right: auto;
 }
