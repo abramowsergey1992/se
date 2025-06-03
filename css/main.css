@@ -6413,6 +6413,10 @@ flex-direction: row;
 	padding-bottom: 24px;
 }
 @media only screen and (max-width: 992px) {
+
+.billbord_list  .breadcrumbs{
+	display: none;
+}
     .commerc-detail .list-help li {
     padding-top: 12px;
 	padding-bottom: 12px;
@@ -6473,3 +6477,117 @@ flex-direction: row;
 .card-info.commerc .card-prices{
     margin-right: auto;
 }
+
+.billbord_list .billbord__content{
+	padding-top: 110px;	
+  	height: initial;
+}
+
+.billbord_list .billbord__left h1{
+    margin-bottom: 20px;
+}
+
+.billbord_list .billbord__left p{
+    font-size: 18px;
+}
+.billbord_list .billbord__left{
+    max-width: 835px;
+}
+
+.billbord_list  .breadcrumbs{
+    margin-bottom: 70px;
+}
+
+.billbord_list  .billbord__title-row{
+	align-items: flex-start;
+}
+.billbord_list .award{
+	max-width: 190px;
+}
+.billbord_list  .billbord__bottom{
+    margin-top: 80px;
+}
+.billbord_list .billbord__left .btn-main{
+    margin-top: 30px;
+	min-width: 260px;
+}
+
+.pt-80{
+    padding-top: 80px;
+}
+.pt-120{
+    padding-top: 120px;
+}
+
+.pb-0{
+	padding-bottom: 0;
+}
+.award-mob{
+	display: none;
+}
+@media only screen and (max-width:992px) {
+	.billbord__title-row{
+		flex-direction: column;
+	}
+}
+@media only screen and (max-width:767px) {
+.billbord_list	.billbord__bottom .row {
+	padding-left: 16px;
+	margin-left: -16px !important;
+	padding-right: 16px;
+	margin-top: 17px;
+}
+.billbord_list .billbord__left .btn-main{
+    margin-top: 30px;
+	min-width: 180px;
+	max-width: 180px;
+}
+.award-mob{
+	    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(34px);
+    border-radius: 12px;
+    padding: 12px;
+    color: #fff;
+    width: 100%;
+    display: flex;
+	gap:10px;
+	max-width: 360px;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.award-mob__img{
+	width: 22px;height: 22px;
+}
+.award-mob__img svg{
+	width: 22px;height: 22px;
+}
+.award-mob__title{
+width: 72px;
+}
+.award-mob__position{
+	font-weight: 800;
+font-size: 11px;
+letter-spacing: 0.02em;
+text-align: center;
+}
+.award-mob__desc{
+	font-weight: 400;
+font-size: 11px;
+
+/* line-height: 12px; */ 
+line-height: 1.1;
+color: #fff;
+}
+.billbord_list .billbord__title-row .title-section{
+	font-size: 24px;
+	line-height: 24px;
+}
+.billbord_list .billbord__left p{
+	font-size: 15px;
+	font-size: 18px;
+}
+.billbord_list  .billbord__content{
+	padding-top: 70px;
+}}
