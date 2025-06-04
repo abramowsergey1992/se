@@ -6597,6 +6597,9 @@ color: #fff;
 .about-new .title-main{
 	margin-bottom: 30px;
 }
+.collections.commerc  .row_main > *{
+	display: block !important;
+}
 @media only screen and (max-width: 1200px) {
     .catalog_selection +  .presentation{
 		margin-top: 100px;
