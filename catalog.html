@@ -199,7 +199,7 @@
 
 
 
-		<section class="billbord billbord_list">
+		<section class="billbord billbord_main">
 			<div class="video-billbord">
 				<video width="100%" data-keepplaying height="auto" preload="auto" autoplay="autoplay" loop autoplay
 					muted>
@@ -209,18 +209,15 @@
 			</div>
 			<div class="container">
 				<div class="billbord__content">
-					<ul class="breadcrumbs">
-                        <li><a href="/">Главная</a></li>
-                            <li>Торговая недвижимость в Москве и МО</li>
-                    </ul>
 					<div class="billbord__top fadeIn wow" data-wow-iteration="1" data-wow-delay="0.6s">
 						<div class="billbord__title-row">
 							<div class="billbord__left">
-								<h1 class="title-section">Продажа торговой недвижимости<br> в Москве и Подмосковье</h1>
-								<p class="">Торговая недвижимость – это коммерческие объекты, предназначенные для размещения магазинов, ресторанов, офисов и других видов бизнеса. Инвестирование в торговую недвижимость выгодно благодаря стабильному доходу от аренды и росту стоимости объектов. Наше агентство Soul Estate поможет вам найти и приобрести оптимальный объект в Москве и Подмосковье.</p>
-								<a class="btn-main">Оставьте заявку</a>	
+								<h1 class="title-big">Коммерческая недвижимость:</h1>
+								<p class="commerc-desc">продажа, аренда, готовый арендный бизнес (ГАБ), склады и производства <br>
+									в Москве и
+									Подмосковье</p>
 							</div>
-							<div class="award  _award-desc">
+							<div class="award _award-desc">
 								<div class="award__left">
 									<div class="award__img">
 										<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -260,52 +257,271 @@
 									<div class="award__desc">Лучшее агентство<br>недвижимости 2024</div>
 								</div>
 							</div>
-						
-							
 						</div>
 
 						<!--  <br>                 <br>                 <br>
                      <a href="https://soulestate.ru/catalog-object/" class="btn-main">Смотреть каталог</a> -->
 
+
+						<form action="https://soulestate.ru/api/catalog-object/html/"
+							data-url="https://soulestate.ru/catalog-object" data-bannerafter="6"
+							data-banner="#template-catalog-banner>div" data-product="#template-catalog-item>div"
+							data-container="#products-grid" data-paginator="#filter-pager"
+							data-totalcount=".filter-total" method="POST" class="catalog-filter-form">
+							<input type="hidden" name="page" value="1">
+							<input type="hidden" name="sort" value="1">
+							<input type="hidden" name="isExclusive" value="">
+							<input type="hidden" name="isSale" value="">
+							<input type="hidden" name="isNew" value="">
+							<div class="checks-filter">
+
+								<div class="filter-check _sell">
+									<label>
+										<input name="categoryType" checked value="291" type="radio" />
+										<span>Купить</span>
+									</label>
+								</div>
+								<div class="filter-check _rsd">
+									<label>
+										<input name="categoryType" value="290" type="radio" data-toggle-filters />
+										<span>Арендовать</span>
+									</label>
+								</div>
+
+
+							</div>
+							<div class="filter-main">
+								<div class="line-filter">
+
+									<div class="item-form item-form_multiple">
+										<label class="select">
+
+
+											<select name="category" data-placeholder="" multiple="multiple">
+												<option value="">Любое</option>
+												<option class="only-village" value="227">ГАБ</option>
+												<option class="only-village" value="228">Торговые помещения</option>
+												<option class="only-village" value="230">Склады и логистические
+													комплексы</option>
+
+												<option class="only-city" value="229">Земельные участки
+													под коммерческую застройку</option>
+
+
+											</select>
+											<span class="select__placeholder">Тип недвижимости</span>
+										</label>
+									</div>
+									<div class="item-form item-form_prices">
+										<div class="item-form__inner">
+											<label class="input">
+
+												<input type="number" name="priceMin" placeholder="" value="">
+												<span class="input__placeholder">Цена от <span class="priceMin-min">0
+													</span></span>
+											</label>
+
+										</div>
+										<div class="item-form__inner">
+											<label class="input">
+
+												<input type="number" placeholder="" name="priceMax" value="">
+												<span class="input__placeholder">Цена до <span
+														class="priceMin-max">10000000000</span></span>
+											</label>
+
+										</div>
+										<select name="currency">
+											<option value="289">€</option>
+											<option selected value="224">₽</option>
+											<option value="225">$</option>
+										</select>
+									</div>
+
+									<div class="item-form item-form_area">
+										<div class="item-form__inner">
+											<label class="input">
+
+												<input type="number" placeholder="" name="squareMin" value="">
+												<span class="input__placeholder">Площадь от — <span
+														class="squareMin-min">23</span> </span>
+											</label>
+										</div>
+										<div class="item-form__inner">
+											<label class="input">
+
+												<input type="number" placeholder="" name="squareMax" value="">
+												<span class="input__placeholder">до <span
+														class="squareMin-min">2998</span>, м<sup>2</sup></span>
+											</label>
+										</div>
+									</div>
+
+									<div class="item-form only-city item-form_multiple">
+										<label class="select">
+											<select name="jk" data-placeholder="" multiple="multiple">
+												<option value=""></option>
+												<option value="159395">1-й Колобовский пер., 14</option>
+												<option value="11063">1-й Тружеников пер., 15</option>
+												<option value="158977">Allegoria Mosca</option>
+												<option value="11104">Armani/Casa Moscow Residences</option>
+												<option value="11070">Artisan</option>
+												<option value="158976">Barkli Gallery</option>
+												<option value="10767">Bogenhouse</option>
+												<option value="11059">Cameo Moscow Villas</option>
+												<option value="159245">Capital Towers</option>
+												<option value="11062">CARRE BLANC</option>
+												<option value="160086">CITY PARK</option>
+												<option value="158774">Clerkenwell House</option>
+												<option value="159906">Cosmos Selection Arbat Apartments</option>
+												<option value="159257">CULT</option>
+												<option value="158768">Grand Deluxe на Плющихе</option>
+												<option value="160045">Hide</option>
+												<option value="11061">High Garden</option>
+												<option value="159434">Hortus Harmonia</option>
+												<option value="159405">KING & SONS</option>
+												<option value="158777">Knightsbridge Private Park</option>
+												<option value="159314">Kuznetsky Most 12 by Lalique</option>
+												<option value="159586">Logos</option>
+												<option value="11071">LUMIN</option>
+												<option value="159543">Maison Rouge</option>
+												<option value="159397">Mon Cher</option>
+												<option value="159387">Nabokov</option>
+												<option value="159810">NEVA TOWERS</option>
+												<option value="159867">Park Residence</option>
+												<option value="158825">Phantom</option>
+												<option value="158781">Polyanka Plaza</option>
+												<option value="159439">Prime Park</option>
+												<option value="10764">Red Side</option>
+												<option value="159657">Red7</option>
+												<option value="159313">Roza Rossa</option>
+												<option value="158818">Savvin River Residence</option>
+												<option value="11058">SMOLENSKY DE LUXE</option>
+												<option value="159959">Soho+Noho </option>
+												<option value="159406">Sole Hills</option>
+												<option value="11083">The Patricks</option>
+												<option value="11075">TITUL на Серебрянической</option>
+												<option value="11073">TITUL на Якиманке</option>
+												<option value="11068">Turandot residences</option>
+												<option value="11072">Turgenev</option>
+												<option value="158693">Vesper Tverskaya</option>
+												<option value="160084">Victory Park Residences</option>
+												<option value="158815">Villa Grace</option>
+												<option value="158814">White Khamovniki</option>
+												<option value="159400">Zvonarsky Deluxe</option>
+												<option value="11076">Абрикосов</option>
+												<option value="159438">Академия</option>
+												<option value="10761">Балчуг Вьюпоинт</option>
+												<option value="159436">Баркли Парк</option>
+												<option value="160042">Башня Империя</option>
+												<option value="11067">Большая Дмитровка 9</option>
+												<option value="159399">Бутиковский 5</option>
+												<option value="159396">Весковский 3</option>
+												<option value="10766">Вишневый сад</option>
+												<option value="160085">Воробьев Дом</option>
+												<option value="159545">Гарибальди 7</option>
+												<option value="11055">Гранатный, 6</option>
+												<option value="158778">Дворянское гнездо</option>
+												<option value="11060">Дизайнерский Дом "Eleven"</option>
+												<option value="159542">Долгоруковская 25</option>
+												<option value="159492">ДОМ XXII</option>
+												<option value="158817">Дом Бакст</option>
+												<option value="158824">Дом Булошникова</option>
+												<option value="10762">Дом на Мосфильмовской</option>
+												<option value="158780">Дом на Плющихе</option>
+												<option value="159432">Дом на Покровском бульваре</option>
+												<option value="11056">Дом на Трубецкой</option>
+												<option value="11069">Дом на Хлебном</option>
+												<option value="158695">Дом с Атлантами</option>
+												<option value="160083">Доминион</option>
+												<option value="158775">Еропкинский 16</option>
+												<option value="158975">Звезды Арбата</option>
+												<option value="159773">Земляной Вал 23с1</option>
+												<option value="159394">Знаменка 13</option>
+												<option value="158823">Золотой</option>
+												<option value="159934">Золотые ключи-1</option>
+												<option value="11085">Ильинка 3/8</option>
+												<option value="159393">Имперский Дом</option>
+												<option value="11053">Итальянский квартал</option>
+												<option value="11093">Камергер</option>
+												<option value="159953">Каскад</option>
+												<option value="158694">Квартал Lucky</option>
+												<option value="11077">Клубный дом «Чистые Пруды»</option>
+												<option value="11091">Клубный дом Duo</option>
+												<option value="159402">Клубный дом в Газетном</option>
+												<option value="11082">Клубный дом Космо 4/22</option>
+												<option value="159437">Клубный дом на Котельнической набережной</option>
+												<option value="10768">Клубный дом на Тишинке</option>
+												<option value="158813">Колымажный 10</option>
+												<option value="158902">Кристалл Хаус</option>
+												<option value="158772">Литератор</option>
+												<option value="158769">Малая Бронная, 15</option>
+												<option value="159972">Малая Грузинская улица, 28</option>
+												<option value="158766">Малая Ордынка 19</option>
+												<option value="158816">Малый Козихинский 7</option>
+												<option value="11065">Небо</option>
+												<option value="158819">Необыденный дом</option>
+												<option value="11095">Обыденский №1</option>
+												<option value="10763">Онегин</option>
+												<option value="158779">Особняк в Хилковом перулке</option>
+												<option value="160072">Остоженка 11</option>
+												<option value="159435">Остров Фантазий</option>
+												<option value="159811">Панорама</option>
+												<option value="159398">Петровъ дом</option>
+												<option value="159404">Поклонная 9</option>
+												<option value="11054">Покровский берег</option>
+												<option value="158767">Полянка 44</option>
+												<option value="159403">Пречистенка 27</option>
+												<option value="11057">Резиденция Монэ</option>
+												<option value="159691">Резиденция Тверская</option>
+												<option value="11051">Резиденция Чистые пруды</option>
+												<option value="158822">Река-2</option>
+												<option value="159753">Рождественский бульвар 19</option>
+												<option value="11088">Саввинская 17</option>
+												<option value="11087">Саввинская 27</option>
+												<option value="158329">Садовническая 69</option>
+												<option value="10765">Садовые кварталы</option>
+												<option value="158773">Сады Пекина</option>
+												<option value="159585">Снегири Эко</option>
+												<option value="11052">Советник</option>
+												<option value="159401">Софийский</option>
+												<option value="158776">Спорт Хаус</option>
+												<option value="158770">Спутник</option>
+												<option value="159544">Суббота</option>
+												<option value="159812">Тараса Шевченко, 1</option>
+												<option value="159433">Театральный Дом</option>
+												<option value="11074">Тессинский, 1</option>
+												<option value="158771">Фьюжн Парк</option>
+												<option value="11098">Хамовники 12</option>
+												<option value="158821">Хользунова, 6</option>
+												<option value="158903">Четыре Ветра</option>
+												<option value="11084">Luzhniki Collection</option>
+											</select>
+											<span class="select__placeholder">ЖК</span>
+										</label>
+									</div>
+									<a href="https://soulestate.ru/catalog-object/"
+										class="catalog-filter-btn-link btn-main"> ПОКАЗАТЬ</a>
+								</div>
+								<div class="hidden-filter">
+
+								</div>
+							</div>
+							<a href="https://soulestate.ru/catalog/novostroiki/" class="tag-filter">Пустые помещения</a>
+
+							<a href="https://soulestate.ru/catalog-object-page-1-sort-1-districts-11219/"
+								class="tag-filter">Помещения с арендаторами</a>
+
+							<a href="https://soulestate.ru/catalog-object-page-1-sort-1-category-233-currency-224/"
+								class="tag-filter">В центре Москвы</a>
+
+
+
+						</form>
+
 					</div>
 
 					<div class="billbord__bottom">
-							<div class="award-mob ">
-								<div class="award-mob__img">
-									<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<circle cx="18" cy="18" r="18" fill="#fff"/>
-											<path
-												d="M26 10.8h-1.5a1 1 0 0 1-1-1c0-.3-.2-.6-.6-.6h-9.8c-.4 0-.7.3-.7.7 0 .5-.4.9-.9.9H10c-.6 0-1.2.5-1.2 1.2v.5a4 4 0 0 0 4 4c.2 0 .3 0 .4.2a5 5 0 0 0 2.3 2.1c.6.3 1 .7 1 1.3 0 .7.5 1.2 1.2 1.2h.8c.7 0 1.3-.5 1.3-1.2 0-.6.3-1 .9-1.3a5 5 0 0 0 2.3-2.1l.4-.2a4 4 0 0 0 4-4V12c0-.7-.6-1.2-1.2-1.2Zm-16 1.7V12h.2c1.3 0 2.3 1 2.3 2.2 0 .6-.4 1.1-1 .9a3 3 0 0 1-1.5-2.6Zm16.2 0c0 1.1-.6 2-1.6 2.6-.5.2-1-.3-1-.9 0-1.3 1-2.3 2.4-2.3h.2v.6Z"
-												fill="url(#ccc)"/>
-												<path
-													d="m23.6 26.3-1.3-3.7c0-.1-.1-.2-.3-.2h-8c-.2 0-.3.1-.3.2l-1.3 3.7c0 .2.1.4.3.4h10.6c.2 0 .3-.2.3-.4Zm-4.2-1.2h-2.8a.6.6 0 0 1 0-1h2.8a.6.6 0 0 1 0 1Z"
-													fill="url(#ddd)"/>
-													<defs>
-														<linearGradient id="ccc" x1="14.1" y1="11.9" x2="26.5"
-															y2="18.4" gradientUnits="userSpaceOnUse">
-															<stop stop-color="#FBA47F">
-																<stop offset="1" stop-color="#DF6B00">
-														</linearGradient>
-														<linearGradient id="ddd" x1="15.6" y1="23.4" x2="21"
-															y2="28.1" gradientUnits="userSpaceOnUse">
-															<stop stop-color="#FBA47F">
-																<stop offset="1" stop-color="#DF6B00">
-														</linearGradient>
-													</defs>
-									</svg>
-								</div>
-								<div class="award-mob__title">
-									<svg viewBox="0 0 118 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<g fill="#fff">
-											<path
-												d="M32.3 14.3V4.8h8c1.2 0 2.2.3 3 1 .6.5 1 1.4 1 2.4a3 3 0 0 1-1.1 2.5c-.7.6-1.7.9-3 .9h-6v2.7h-2Zm7.6-8h-5.6V10h5.6c.8 0 1.4-.1 1.8-.4.4-.4.5-.8.5-1.4 0-1.2-.7-1.8-2.3-1.8Zm6.8 8V4.8H55c1.2 0 2.1.3 2.8.8.6.6.9 1.3.9 2.3 0 .9-.3 1.6-1 2.1a4 4 0 0 1-2.6.9l3.8 3.4h-2.6L52.6 11h-3.9v3.3h-2Zm7.9-8h-5.9v3.2h5.9c1.3 0 2-.5 2-1.6 0-1-.7-1.6-2-1.6Zm6.8 8V4.8h2v9.5h-2Zm6.2-9.5 4.7 7.7 4.8-7.7h2.2l-6 9.5h-2l-6-9.5h2.3ZM90 14.3l-1.5-2.2h-7.3l-1.5 2.2h-2.2L84 4.8h2l6.4 9.5H90Zm-8-3.7h5.5l-2.8-4.1-2.7 4.1Zm14.7 3.7v-8h-5.4V4.9H104v1.6h-5.4v8h-2Zm9.5 0V4.8h11.2v1.5h-9.3v2.4h8.5v1.5H108V13h9.4v1.4h-11.3ZM23.6 8.9h-1.9c1.1-.2 2-.6 2.9-1.2A4 4 0 0 0 26 4.5a4 4 0 0 0-1.5-3.2A5 5 0 0 0 20.8 0h-7.5L8.8 10.4 4.2 0H.5v14.3h1.3V2.6l5.3 11.7h1.4l5-11.6v11.6h3.2V9h3.5l3 5.4h3.4l-3-5.4Zm-3.8-1.4h-3.1V1.4h3c1.7 0 2.8 1.2 2.8 3 0 2-1 3.1-2.7 3.1Z">
-										</g>
-									</svg>
-								</div>
-								<div class="award-mob__position">1 место</div>
-						
-								<div class="award-mob__desc">Лучшее агентство<br>недвижимости 2024</div>
-							</div>
 						<div class="row">
 							<div class="col-4">
 								<div class="item-billbord fadeInUp wow" data-wow-iteration="1" data-wow-delay="0.3s">
@@ -341,10 +557,44 @@
 						</div>
 
 					</div>
-					
+					<div class="award _award-mob">
+						<div class="award__left">
+							<div class="award__img">
+							<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="18" cy="18" r="18" fill="#fff"></circle>
+                                          <path d="M26 10.8h-1.5a1 1 0 0 1-1-1c0-.3-.2-.6-.6-.6h-9.8c-.4 0-.7.3-.7.7 0 .5-.4.9-.9.9H10c-.6 0-1.2.5-1.2 1.2v.5a4 4 0 0 0 4 4c.2 0 .3 0 .4.2a5 5 0 0 0 2.3 2.1c.6.3 1 .7 1 1.3 0 .7.5 1.2 1.2 1.2h.8c.7 0 1.3-.5 1.3-1.2 0-.6.3-1 .9-1.3a5 5 0 0 0 2.3-2.1l.4-.2a4 4 0 0 0 4-4V12c0-.7-.6-1.2-1.2-1.2Zm-16 1.7V12h.2c1.3 0 2.3 1 2.3 2.2 0 .6-.4 1.1-1 .9a3 3 0 0 1-1.5-2.6Zm16.2 0c0 1.1-.6 2-1.6 2.6-.5.2-1-.3-1-.9 0-1.3 1-2.3 2.4-2.3h.2v.6Z" fill="url(#a)"></path>
+                                          <path d="m23.6 26.3-1.3-3.7c0-.1-.1-.2-.3-.2h-8c-.2 0-.3.1-.3.2l-1.3 3.7c0 .2.1.4.3.4h10.6c.2 0 .3-.2.3-.4Zm-4.2-1.2h-2.8a.6.6 0 0 1 0-1h2.8a.6.6 0 0 1 0 1Z" fill="url(#b)"></path>
+                                          <defs>
+                                            <linearGradient id="a" x1="14.1" y1="11.9" x2="26.5" y2="18.4" gradientUnits="userSpaceOnUse">
+                                              <stop stop-color="#FBA47F"></stop>
+                                              <stop offset="1" stop-color="#DF6B00"></stop>
+                                            </linearGradient>
+                                            <linearGradient id="b" x1="15.6" y1="23.4" x2="21" y2="28.1" gradientUnits="userSpaceOnUse">
+                                              <stop stop-color="#FBA47F"></stop>
+                                              <stop offset="1" stop-color="#DF6B00"></stop>
+                                            </linearGradient>
+                                          </defs>
+                                    </svg>
+									</div>
+							<div class="award__position">1 место</div>
+						</div>
+						<div class="award__right">
+
+							<div class="award__title">
+								<svg viewBox="0 0 118 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g fill="#fff">
+										<path
+											d="M32.3 14.3V4.8h8c1.2 0 2.2.3 3 1 .6.5 1 1.4 1 2.4a3 3 0 0 1-1.1 2.5c-.7.6-1.7.9-3 .9h-6v2.7h-2Zm7.6-8h-5.6V10h5.6c.8 0 1.4-.1 1.8-.4.4-.4.5-.8.5-1.4 0-1.2-.7-1.8-2.3-1.8Zm6.8 8V4.8H55c1.2 0 2.1.3 2.8.8.6.6.9 1.3.9 2.3 0 .9-.3 1.6-1 2.1a4 4 0 0 1-2.6.9l3.8 3.4h-2.6L52.6 11h-3.9v3.3h-2Zm7.9-8h-5.9v3.2h5.9c1.3 0 2-.5 2-1.6 0-1-.7-1.6-2-1.6Zm6.8 8V4.8h2v9.5h-2Zm6.2-9.5 4.7 7.7 4.8-7.7h2.2l-6 9.5h-2l-6-9.5h2.3ZM90 14.3l-1.5-2.2h-7.3l-1.5 2.2h-2.2L84 4.8h2l6.4 9.5H90Zm-8-3.7h5.5l-2.8-4.1-2.7 4.1Zm14.7 3.7v-8h-5.4V4.9H104v1.6h-5.4v8h-2Zm9.5 0V4.8h11.2v1.5h-9.3v2.4h8.5v1.5H108V13h9.4v1.4h-11.3ZM23.6 8.9h-1.9c1.1-.2 2-.6 2.9-1.2A4 4 0 0 0 26 4.5a4 4 0 0 0-1.5-3.2A5 5 0 0 0 20.8 0h-7.5L8.8 10.4 4.2 0H.5v14.3h1.3V2.6l5.3 11.7h1.4l5-11.6v11.6h3.2V9h3.5l3 5.4h3.4l-3-5.4Zm-3.8-1.4h-3.1V1.4h3c1.7 0 2.8 1.2 2.8 3 0 2-1 3.1-2.7 3.1Z">
+									</g>
+								</svg>
+							</div>
+							<div class="award__desc">Лучшее агентство<br>недвижимости 2024</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
+
 		<section class="catalog catalog_selection pt-80">
             <div class="container">
 				 <h2 class="title-section">Каталог торговых помещений на продажу</h2>
@@ -1518,193 +1768,195 @@
             </div>
 			</div>
 		</section>
-		<section class="presentation">
-			<div class="container">
-				<div class="presentation-block presentation-block_main">
-					<div class="row">
-						<div class="col-xl-5">
-							<h2 class="title-section">Оставьте заявку на подбор торговой недвижимости</h2>
-							<div class="title-small">Оставьте контакты и мы свяжемся в ближайшее время</div>
-						</div>
-						<div class="col-xl-3">
-							<div class="image-phone-form">
-								<img src="i/feedback-3.png" alt="alt">
-							</div>
-							<div class="presentation-block__bg" data-parallax='{"y": -150}'>
-								<img src="img/ms6.svg" class="hidden-mob" alt="alt">
-								<img src="img/ms6_mob.svg" class="show-mobile" alt="alt">
-							</div>
-						</div>
-						<div class="col-xl-4">
-							<div class="presentation-block__form">
-                        <form action="/api/webform/downloadPdfForObjectCatalog/" method="PUT" id="form_downloadPdfForObjectCatalog">
-                                                                    <div class="item-form item-form_page">
-                                            <input type="text" placeholder="Имя" required="required" name="form_text_61">
 
-                                        </div>
-                                                                                <div class="item-form item-form_page">
-                                            <input type="text" class="input-phone" placeholder="Телефон" required="required" name="form_text_62">
+<section class="consultation fadeIn wow" data-wow-iteration="1" data-wow-delay="0.3s">
+        <div class="container">
+            
+<div class="consultation-block">
+    <div class="row">
+        <div class="col-xl-6">
+            <h2 class="title-section">Оставьте заявку на подбор торговой недвижимости</h2>
+            <div class="descr-section">Заполните форму, и специалист подберет объект с учетом бюджета и желаемой доходности</div>
+        </div>
+        <div class="col-xl-6">
+            <form action="https://soulestate.ru/api/webform/estateSelectMainPage/" method="PUT" id="form_estateSelectMainPage">
+                <div class="row">
+                                                    <div class="col-md-6">
+                                    <div class="item-form">
+                                        <input type="text"  placeholder="Имя" required="required"  name="form_text_10">
 
-                                        </div>
-                                        
-                                        <div class="socials-form">
-                                            <div class="title-socials">Выберите мессенджер</div>
-                                            <ul class="list-social">
-                                                                                                    <li>
-                                                        <div class="list-social_tg">
-                                                            <label>
-                                                                <input type="radio" name="form_dropdown_messenger" checked="checked" value="63">
-                                                                <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="28" cy="28" r="28" fill="#F6F6F6"></circle><path d="M32.4906 36.1006C32.35 36.1006 32.2103 36.059 32.0905 35.9777L27.5646 32.9077L25.1371 34.6544C24.9467 34.7913 24.7014 34.8258 24.4803 34.7467C24.2595 34.6675 24.0918 34.4846 24.032 34.2578L22.8131 29.6387L18.458 27.9735C18.1838 27.8686 18.002 27.6063 18 27.3127C17.998 27.0192 18.1762 26.7544 18.4491 26.6458L35.0088 20.0566C35.084 20.0247 35.1635 20.0062 35.2437 20.0013C35.2724 19.9996 35.3011 19.9996 35.3297 20.0012C35.4958 20.0111 35.6589 20.0787 35.7862 20.2036C35.7994 20.2165 35.812 20.2297 35.8238 20.2435C35.9293 20.3639 35.9872 20.5108 35.9982 20.6604C36.0008 20.698 36.0006 20.7361 35.9973 20.7742C35.995 20.8014 35.9911 20.8285 35.9856 20.8553L33.1904 35.5214C33.1455 35.757 32.9851 35.9543 32.7636 36.0461C32.6757 36.0826 32.5829 36.1006 32.4906 36.1006ZM27.962 31.4553L31.9935 34.1899L34.1685 22.7781L26.3131 30.3369L27.943 31.4425C27.9495 31.4466 27.9558 31.451 27.962 31.4553ZM24.6059 30.8472L25.1457 32.8926L26.3087 32.0557L24.7858 31.0227C24.715 30.9748 24.6544 30.9152 24.6059 30.8472ZM20.673 27.2946L23.6634 28.4379C23.8776 28.5198 24.0393 28.6999 24.0978 28.9217L24.4771 30.3589C24.4944 30.1931 24.5696 30.0372 24.6917 29.9196L32.1767 22.7173L20.673 27.2946Z" fill="#2F80ED"></path></svg>                                                            </label>
-                                                        </div>
-                                                    </li>
-                                                                                                    <li>
-                                                        <div class="list-social_tg">
-                                                            <label>
-                                                                <input type="radio" name="form_dropdown_messenger" value="64">
-                                                                <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="28" cy="28" r="28" fill="#F6F6F6"></circle><path d="M34.3401 21.6139C32.6476 19.9293 30.396 19.001 27.9996 19C25.6086 19 23.3534 19.9275 21.6497 21.6117C19.943 23.2988 19.0022 25.5408 19 27.9166V27.921C19.0003 29.359 19.3784 30.8096 20.0963 32.1337L19.0246 37L23.9516 35.8804C25.1995 36.5086 26.5918 36.8399 27.9962 36.8404H27.9997C30.3903 36.8404 32.6455 35.9128 34.3495 34.2284C36.0577 32.54 36.9989 30.3008 37 27.9235C37.0007 25.563 36.0562 23.3222 34.3401 21.6139ZM27.9996 35.4355H27.9964C26.7355 35.435 25.4861 35.1187 24.3835 34.5207L24.1505 34.3943L20.8743 35.1388L21.5859 31.9077L21.4487 31.6714C20.7667 30.4962 20.4062 29.199 20.4062 27.9195C20.4088 23.7781 23.8149 20.4049 27.9993 20.4049C30.0208 20.4057 31.9203 21.1886 33.3477 22.6091C34.7966 24.0517 35.5943 25.9388 35.5936 27.9231C35.592 32.0655 32.1853 35.4355 27.9996 35.4355Z" fill="#5FBC74"></path><path d="M25.5507 23.9874H25.1562C25.0189 23.9874 24.7959 24.0387 24.6073 24.2438C24.4186 24.4489 23.8867 24.9448 23.8867 25.9534C23.8867 26.9619 24.6245 27.9364 24.7273 28.0733C24.8303 28.2101 26.1514 30.3459 28.2439 31.1675C29.9829 31.8503 30.3368 31.7145 30.7142 31.6803C31.0916 31.6462 31.9322 31.1845 32.1038 30.7059C32.2753 30.2273 32.2753 29.817 32.2239 29.7313C32.1724 29.6459 32.035 29.5947 31.8293 29.4922C31.6233 29.3896 30.6144 28.8854 30.4256 28.8168C30.2369 28.7486 30.0997 28.7144 29.9624 28.9197C29.8251 29.1246 29.4208 29.5986 29.3007 29.7354C29.1807 29.8723 29.0605 29.8895 28.8546 29.7869C28.6487 29.6841 27.9924 29.4638 27.206 28.7656C26.5939 28.2222 26.1692 27.5292 26.049 27.3241C25.929 27.119 26.0362 27.0081 26.1395 26.9058C26.232 26.814 26.3569 26.6885 26.4599 26.5689C26.5627 26.4491 26.592 26.3637 26.6607 26.2269C26.7293 26.0902 26.6949 25.9704 26.6435 25.868C26.592 25.7654 26.1969 24.7518 26.0138 24.3464C25.8596 24.005 25.6974 23.9934 25.5507 23.9874Z" fill="#5FBC74"></path></svg>                                                            </label>
-                                                        </div>
-                                                    </li>
-                                                                                            </ul>
-                                        </div>
-
-                                                                                <input type="hidden" name="form_url_90" value="http://90.156.253.24:80/catalog-object/pentkhaus-232-4-m2-v-zhk-onegin1603595/">
-                                                                    <input type="submit" value="Получить" class="btn-main btn-main_page">
-                            <div class="col-md-12" id="error-message-block">
-                                <div class="item-form">
-                                    <div class="error-text" style="color:white;"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="agree-form">Нажимая на кнопку, вы соглашаетесь с <a href="/privacy-polity/" rel="nofollow">условиями
-                                    обработки персональных данных</a></div>
-                        </form>
+                                                                <div class="col-md-6">
+                                    <div class="item-form">
+                                        <input type="text" class="input-phone" placeholder="Телефон" required="required" class="input-phone" name="form_text_11">
+
+                                    </div>
+                                </div>
+                                                                <div class="col-md-6">
+                                    <div class="title-socials"></div>
+                                    <ul class="list-social">
+                                                                                    <li>
+                                                <div class="list-social_tg">
+                                                    <label>
+                                                        <input type="radio" name="form_dropdown_messager" checked="checked" value="12"/>
+                                                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <circle cx="28" cy="28" r="28" fill="#F6F6F6"/>
+                                                            <path d="M32.4906 36.1006C32.35 36.1006 32.2103 36.059 32.0905 35.9777L27.5646 32.9077L25.1371 34.6544C24.9467 34.7913 24.7014 34.8258 24.4803 34.7467C24.2595 34.6675 24.0918 34.4846 24.032 34.2578L22.8131 29.6387L18.458 27.9735C18.1838 27.8686 18.002 27.6063 18 27.3127C17.998 27.0192 18.1762 26.7544 18.4491 26.6458L35.0088 20.0566C35.084 20.0247 35.1635 20.0062 35.2437 20.0013C35.2724 19.9996 35.3011 19.9996 35.3297 20.0012C35.4958 20.0111 35.6589 20.0787 35.7862 20.2036C35.7994 20.2165 35.812 20.2297 35.8238 20.2435C35.9293 20.3639 35.9872 20.5108 35.9982 20.6604C36.0008 20.698 36.0006 20.7361 35.9973 20.7742C35.995 20.8014 35.9911 20.8285 35.9856 20.8553L33.1904 35.5214C33.1455 35.757 32.9851 35.9543 32.7636 36.0461C32.6757 36.0826 32.5829 36.1006 32.4906 36.1006ZM27.962 31.4553L31.9935 34.1899L34.1685 22.7781L26.3131 30.3369L27.943 31.4425C27.9495 31.4466 27.9558 31.451 27.962 31.4553ZM24.6059 30.8472L25.1457 32.8926L26.3087 32.0557L24.7858 31.0227C24.715 30.9748 24.6544 30.9152 24.6059 30.8472ZM20.673 27.2946L23.6634 28.4379C23.8776 28.5198 24.0393 28.6999 24.0978 28.9217L24.4771 30.3589C24.4944 30.1931 24.5696 30.0372 24.6917 29.9196L32.1767 22.7173L20.673 27.2946Z"
+                                                                  fill="#2F80ED"/>
+                                                        </svg>                                                    </label>
+                                                </div>
+                                            </li>
+                                                                                    <li>
+                                                <div class="list-social_wp">
+                                                    <label>
+                                                        <input type="radio" name="form_dropdown_messager"  value="13"/>
+                                                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="28" cy="28" r="28" fill="#F6F6F6"></circle><path d="M34.3401 21.6139C32.6476 19.9293 30.396 19.001 27.9996 19C25.6086 19 23.3534 19.9275 21.6497 21.6117C19.943 23.2988 19.0022 25.5408 19 27.9166V27.921C19.0003 29.359 19.3784 30.8096 20.0963 32.1337L19.0246 37L23.9516 35.8804C25.1995 36.5086 26.5918 36.8399 27.9962 36.8404H27.9997C30.3903 36.8404 32.6455 35.9128 34.3495 34.2284C36.0577 32.54 36.9989 30.3008 37 27.9235C37.0007 25.563 36.0562 23.3222 34.3401 21.6139ZM27.9996 35.4355H27.9964C26.7355 35.435 25.4861 35.1187 24.3835 34.5207L24.1505 34.3943L20.8743 35.1388L21.5859 31.9077L21.4487 31.6714C20.7667 30.4962 20.4062 29.199 20.4062 27.9195C20.4088 23.7781 23.8149 20.4049 27.9993 20.4049C30.0208 20.4057 31.9203 21.1886 33.3477 22.6091C34.7966 24.0517 35.5943 25.9388 35.5936 27.9231C35.592 32.0655 32.1853 35.4355 27.9996 35.4355Z" fill="#5FBC74"></path><path d="M25.5507 23.9874H25.1562C25.0189 23.9874 24.7959 24.0387 24.6073 24.2438C24.4186 24.4489 23.8867 24.9448 23.8867 25.9534C23.8867 26.9619 24.6245 27.9364 24.7273 28.0733C24.8303 28.2101 26.1514 30.3459 28.2439 31.1675C29.9829 31.8503 30.3368 31.7145 30.7142 31.6803C31.0916 31.6462 31.9322 31.1845 32.1038 30.7059C32.2753 30.2273 32.2753 29.817 32.2239 29.7313C32.1724 29.6459 32.035 29.5947 31.8293 29.4922C31.6233 29.3896 30.6144 28.8854 30.4256 28.8168C30.2369 28.7486 30.0997 28.7144 29.9624 28.9197C29.8251 29.1246 29.4208 29.5986 29.3007 29.7354C29.1807 29.8723 29.0605 29.8895 28.8546 29.7869C28.6487 29.6841 27.9924 29.4638 27.206 28.7656C26.5939 28.2222 26.1692 27.5292 26.049 27.3241C25.929 27.119 26.0362 27.0081 26.1395 26.9058C26.232 26.814 26.3569 26.6885 26.4599 26.5689C26.5627 26.4491 26.592 26.3637 26.6607 26.2269C26.7293 26.0902 26.6949 25.9704 26.6435 25.868C26.592 25.7654 26.1969 24.7518 26.0138 24.3464C25.8596 24.005 25.6974 23.9934 25.5507 23.9874Z" fill="#5FBC74"></path></svg>                                                    </label>
+                                                </div>
+                                            </li>
+                                                                            </ul>
+                                </div>
+                                                                <input type="hidden" name="form_url_83" value="https://soulestate.ru:443/">
+                                                    <div class="col-md-6 align-self-end">
+                        <input type="submit" value="Получить каталог" class="btn-main btn-main_page">
                     </div>
+                    <div class="col-md-12" id="error-message-block">
+                        <div class="item-form">
+                            <div class="error-text"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="agree-form">Нажимая на кнопку, вы соглашаетесь с <a href="/privacy-polity/" rel="nofollow">условиями обработки персональных данных</a> </div>
+            </form>
+        </div>
+    </div>
+    <div class="consultation-block__bg" data-parallax='{"y": -150}'>
+        <img loading="lazy" src="https://soulestate.ru/local/templates/soulestate/img/ms2.svg" alt="alt">
+    </div>
+</div>
+
+        </div>
+    </section>
+
+
+		
+
+
+		<section class="about  about-new mt-block ">
+			<div class="container">
+				<div class="row about__middle">
+					<div class="col-xl-5">
+						<div class="about__image fadeIn wow" data-wow-iteration="1" data-wow-delay="0.3s">
+							<img loading="lazy" src="i/abput-1.jpg"
+								alt="alt">
+						</div>
+					</div>
+					<div class="col-xl-6 offset-xl-1">
+						<h2 class="title-main fadeInUp wow " data-wow-iteration="1" data-wow-delay="0.3s" data-wow-duration="1s">Удобный поиск комерческой недвижимости</h2>
+						
+						<div  class="about__text fadeIn wow " data-wow-iteration="1" data-wow-delay="0.3s"  data-wow-duration="1s">
+							Сегодня в нашей базе представлено 5181 квартира в 751 ЖК. В центре Москвы к реализации предлагается 3726 объект. 
+							<br><br>
+							Стоимость недвижимости начинается от 301 043 $.К разряду элитного относится видовое жилье площадью не менее 100 кв.м, расположенное в исторических районах с развитой инфраструктурой и близостью зеленых массивов. Это новые дома и реконструированные особняки с обновленными инженерными коммуникациями.
+							<br><br>
+							<b>Основные характеристики:</b>
+							<br><br>
+							Современный интерьер — значительная площадь, свободные планировки, высокие потолки и большие окна;
+							<br><br>
+							Качественная инженерия — системы водоочистки и кондиционирования, бесперебойное электричество и водоснабжение, бесшумные скоростные лифты;
+							<br><br>
+							Оборудованные внутренние дворы с мини-парками и цветниками, детскими городками, местами для выгула собак и спортивными площадками;
+							<br><br>
+							Room-сервис — служба консьержей, доставка продуктов на дом, частный детский сад внутри дома.
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-		<section class="page-service pt-0">
-			<div class="container">
-				<h2 class="title-section fadeIn wow " data-wow-iteration="1" data-wow-delay="0.3s">Берем на себя все заботы</h2>
-				<div class="title-main fadeIn wow " data-wow-iteration="1" data-wow-delay="0.3s">Регулярно отчитываемся о проделанной работе</div>
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="page-service__image">
-							<img src="i/info.png" alt="alt">
-							<div class="ms-service" data-parallax='{"y": -150}'>
-							
-								<img src="i/info-pattern.svg"  alt="alt">
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="unit-info">
-							<div class="unit-info__head">
-								<div class="unit-info__icon">
-									<img src="img/ic_info_service1.svg" alt="alt">
-								</div>
-								<div class="title-small">Почему стоит инвестировать в торговую недвижимость?</div>
-							</div>
-							<div class="unit-info__content">
-								<ul>
-									<li>Высокая доходность – коммерческая недвижимость приносит стабильный доход.</li>
-									<li>Ликвидность и рост цен – стоимость качественных объектов постоянно растёт.</li>
-									<li>Стабильный арендный поток – сдача в аренду обеспечивает постоянную прибыль.</li>
-								</ul>
-							</div>
-						</div>
-						<div class="unit-info">
-							<div class="unit-info__head">
-								<div class="unit-info__icon">
-									<img src="img/ic_info_service2.svg" alt="alt">
-								</div>
-								<div class="title-small">Как выбрать торговую недвижимость для покупки?</div>
-							</div>
-							<div class="unit-info__content">
-								<ul>
-									<li>Локация – лучшие районы для бизнеса в Москве и Подмосковье</li>.
-									<li>Проходимость, наличие арендаторов – важные параметры для успешных вложений.</li>
-									<li>Юридические аспекты сделки – сопровождение покупки, проверка документов.</li>
-								</ul>
-							</div>
-						</div>
+				
+				<div class="row about__middle">
 					
+					<div class="col-xl-5">
+						<h2 class="title-main fadeInUp wow " data-wow-iteration="1" data-wow-delay="0.3s" data-wow-duration="1s">Легкий поиск и подбор</h2>
+						<div class="about__text fadeIn wow " data-wow-iteration="1" data-wow-delay="0.3s"  data-wow-duration="1s">
+							Не каждая квартира стоимостью от $100 000 имеет премиальный статус. Ориентироваться только на цену рискованно. Поиск жилья на нашем сайте уменьшает риски, так как каждый объект проходит проверку. Мы учитываем большое количество параметров при подборе. Благодаря такому подходу легко подобрать квартиру с желаемым количеством спален и санузлов, на комфортном этаже и в престижном районе.
+							<br><br>
+							Каждый объект в каталоге снабжен подлинными фотографиями, планировкой и описанием с характеристиками дома. Интерактивная карта показывает рестораны, супермаркеты, фитнес-центры и другие объекты, находящиеся в шаговой доступности от жилого комплекса. Чтобы посмотреть заинтересовавший вас вариант, оставьте номер телефона в форме обратной связи. Менеджер запишет вас на просмотр в удобное время.
+							<br><br>
+							Если не можете выбрать подходящий объект, закажите бесплатный подбор квартиры по телефону или электронной почте, указав требования к будущему жилью. Консультант подберет оптимальные варианты и пришлет их презентацию на e-mail.
+						</div>
+					</div>
+					<div class="col-xl-6  offset-xl-1">
+						<div class="about__image fadeIn wow" data-wow-iteration="1" data-wow-delay="0.3s">
+							<img loading="lazy" src="i/abput-2.jpg"
+								alt="alt">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-5">
+						<div class="about__image fadeIn wow" data-wow-iteration="1" data-wow-delay="0.3s">
+							<img loading="lazy" src="i/abput-3.jpg"
+								alt="alt">
+						</div>
+					</div>
+					<div class="col-xl-6  offset-xl-1">
+						<h2 class="title-main fadeInUp wow " data-wow-iteration="1" data-wow-delay="0.3s" data-wow-duration="1s">Soul Estate
+агентство элитной недвижимости в Москве и МО</h2>
+						<div class="about__text fadeIn wow " data-wow-iteration="1" data-wow-delay="0.3s"  data-wow-duration="1s">
+							Агентство элитной недвижимости “Soul Estate” – команда профессионалов и экспертов с 15-летним стажем.
+							<br><br>Наши брокеры досконально знают рынок элитной недвижимости Москвы и Подмосковья, а потому смогут вам помочь в выборе квартиры или дома для жизни, инвестиций или бизнеса. 
+							<br><br>Мы убеждены, что процесс покупки и продажи недвижимости должен быть максимально простым и комфортным. Поэтому берем на себя любые организационные, юридические и финансовые вопросы. 
+							<br><br>Ценим долгосрочные партнерские отношения с клиентами, готовы помочь в вопросах покупки и продажи квартиры, дома, участка, склада и прочее. Строго соблюдаем принципы конфиденциальности.
+							<br><br>В нашем каталоге более 50 000 объектов недвижимости, в том числе эксклюзивные и закрытые. 
+					</div>
+				</div>
+				
+			</div>
+		</section>
+
+		<section class="feedback feedback_socials  mt-block">
+			<div class="container">
+				<div class="feedback-block">
+					<div class="row align-items-center">
+						<div class="col-xl-6 col-md-7">
+							<h2 class="title-section">Интересное из мира недвижимости
+							</h2>
+							<ul class="socials-buttons">
+								<li><a href="https://m.youtube.com/@soul_estate" target="_blank"><img loading="lazy"
+											src="https://soulestate.ru/local/templates/soulestate/img/soc_btn1.svg"
+											alt="alt">YOUTUBE</a></li>
+								<li><a href="https://www.instagram.com/soulestate.ru?igsh=eTJ3MWoyYnp3dGp2"
+										target="_blank"><img loading="lazy"
+											src="https://soulestate.ru/local/templates/soulestate/img/soc_btn2.svg"
+											alt="alt">INSTAGRAM</a></li>
+								<li><a href="https://dzen.ru/soulestate" target="_blank"><img loading="lazy"
+											src="https://soulestate.ru/local/templates/soulestate/img/soc_btn3.svg"
+											alt="alt">DZEN</a></li>
+								<li><a href="https://rutube.ru/channel/45202456/" target="_blank"><img loading="lazy"
+											src="https://soulestate.ru/local/templates/soulestate/img/rutube.svg"
+											alt="alt">RUTUBE</a></li>
+							</ul>
+							<div class="descr-section">Предлагаем вам выбрать соцсеть, чтобы наблюдать за нами и не
+								пропустить самые горячие новости и интересные предложения.
+
+								(Instagram - запрещенная в РФ соцсеть)</div>
+						</div>
+						<div class="col-xl-6 col-md-5">
+							<div class="feedback-block__image">
+								<img loading="lazy"
+									src="i/feedback-2.png"
+									alt="alt">
+							</div>
+						</div>
+					</div>
+					<div class="feedback-block__bg" data-parallax='{"y": -150}'>
+						<img loading="lazy" src="https://soulestate.ru/local/templates/soulestate/img/ms4.svg"
+							class="hidden-mob" alt="alt">
+						<img loading="lazy" src="https://soulestate.ru/local/templates/soulestate/img/ms5.svg"
+							class="show-mobile" alt="alt">
 					</div>
 				</div>
 			</div>
 		</section>
-			<section class="help _new pb-0 pt-120 catalog">
-			<div class="container">
-				<h2 class="title-section fadeInUp wow" data-wow-duration="1s" data-wow-iteration="1"
-					data-wow-delay="0.3s">
-					Почему выгодно сотрудничать с нами?</h2>
-
-				<div class="why-row">
-					<div class="why-it">
-						<div class="icon-main">
-							<img loading="lazy" src="https://soulestate.ru/local/templates/soulestate/img/ic_help1.svg"
-								alt="Подберем элитную недвижимость, исходя из целей и запроса">
-						</div>
-						<p>Экспертиза в коммерческой недвижимости – многолетний опыт&nbsp;на&nbsp;рынке.
-						</p>
-					</div>
-					<div class=" why-it">
-						<div class="icon-main">
-							<img loading="lazy" src="https://soulestate.ru/local/templates/soulestate/img/ic_help2.svg"
-								alt="Подберем элитную недвижимость, исходя из целей и запроса">
-						</div>
-						<p>Большая база актуальных объектов – всегда свежие предложения.
-						</p>
-					</div>
-					<div class=" why-it">
-						<div class="icon-main">
-							<img loading="lazy" src="https://soulestate.ru/local/templates/soulestate/img/ic_help3.svg"
-								alt="Подберем элитную недвижимость, исходя из целей и запроса">
-						</div>
-						<p>Полный цикл сопровождения сделки – от подбора до оформления.
-						</p>
-					</div>
-
-				</div>
-			</div>
-		</section>
-
-		<section class="news pt-80 ">
-			<div class="container">
-				<h2 class="title-section fadeInUp wow" data-wow-duration="1s" data-wow-iteration="1"
-					data-wow-delay="0.3s">Часто задаваемые вопросы</h2>
-				<div class="faqs">
-					<div class="faq">
-						<div class="faq__head">
-								<div class="faq__title">Какие документы нужны для покупки торговой недвижимости?</div>
-								<button type="button" class="faq__toggle"></button>
-						</div>
-						<div class="faq__body">
-							<p>Можно обсудить долгосрочный договор или предложить улучшение помещения за счёт арендатора.</p>
-						</div>
-					</div>
-					<div class="faq">
-						<div class="faq__head">
-								<div class="faq__title">Как рассчитать окупаемость GAB? </div>
-								<button type="button" class="faq__toggle"></button>
-						</div>
-						<div class="faq__body">
-							<p>Можно обсудить долгосрочный договор или предложить улучшение помещения за счёт арендатора.</p>
-						</div>
-					</div>
-					<div class="faq">
-						<div class="faq__head">
-								<div class="faq__title">Как арендатору снизить ставку аренды?</div>
-								<button type="button" class="faq__toggle"></button>
-						</div>
-						<div class="faq__body">
-							<p>Можно обсудить долгосрочный договор или предложить улучшение помещения за счёт арендатора.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			</section>
-
 
 
 

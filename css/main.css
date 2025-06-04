@@ -6591,3 +6591,13 @@ color: #fff;
 .billbord_list  .billbord__content{
 	padding-top: 70px;
 }}
+.image-phone-form img{
+	max-width: 382px;	
+}
+.about-new .title-main{
+	margin-bottom: 30px;
+}
+@media only screen and (max-width: 1200px) {
+    .catalog_selection +  .presentation{
+		margin-top: 100px;
+	}}
